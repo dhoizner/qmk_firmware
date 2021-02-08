@@ -22,3 +22,6 @@ BLUETOOTH_ENABLE = no       # Enable Bluetooth
 AUDIO_ENABLE = no           # Audio output
 
 UNICODE_ENABLE = yes        # Unicode
+
+AUTO_SHIFT_ENABLE = yes
+AUTO_SHIFT_MODIFIERS = yes
