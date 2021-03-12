@@ -18,12 +18,6 @@
 
 #include "config_common.h"
 
-#define TAPPING_TERM 165
-#define PERMISSIVE_HOLD
-
-#define AUTO_SHIFT_TIMEOUT 155
-#define NO_AUTO_SHIFT_ALPHA
-
 /* USB Device descriptor parameter */
 
 #define VENDOR_ID       0x1209
