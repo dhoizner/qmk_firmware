@@ -87,7 +87,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,              KC_W,              KC_F,              KC_P,              KC_B,              KC_J,              KC_L,              KC_U,              KC_Y,              KC_QUOT,
     LCTL_T(KC_A),     LALT_T(KC_R),      LGUI_T(KC_S),      LSFT_T(KC_T),      KC_G,              KC_M,              LSFT_T(KC_N),      LGUI_T(KC_E),      LALT_T(KC_I),      LCTL_T(KC_O),
     KC_Z,              ALGR_T(KC_X),      KC_C,              KC_D,              KC_V,              KC_K,              KC_H,              KC_COMM,           ALGR_T(KC_DOT),    KC_SLSH,
-    RESET,              U_NP,              LT(MEDR, KC_ESC),  LT(NAVR, KC_SPC),  LT(MOUR, KC_TAB),  LT(NSSL, KC_ENT),  LT(NSL, KC_BSPC),  LT(FUNL, KC_DEL),  U_NP,              U_NP
+    U_NP,              U_NP,              LT(MEDR, KC_DEL),  LT(NAVR, KC_BSPC),  LT(MOUR, KC_TAB),  LT(NSSL, KC_ENT),  LT(NSL, KC_SPC),  LT(FUNL, KC_ESC),  U_NP,              U_NP
   ),
 #endif
 #if defined MIRYOKU_NAV_VI
@@ -142,9 +142,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     U_NP,    U_NP,    KC_APP,  KC_SPC,  KC_TAB,  U_NA,    U_NA,    U_NA,    U_NP,    U_NP
   ),
   [NSL] = LAYOUT_miryoku(
-    KC_LBRC, KC_7,    KC_8,    KC_9,    KC_RBRC, U_NA,    U_NA,    U_NA,    U_NA,    RESET,
-    KC_SCLN, KC_4,    KC_5,    KC_6,    KC_EQL,  U_NA,    KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL,
-    KC_GRV,  KC_1,    KC_2,    KC_3,    KC_BSLS, U_NA,    U_NA,    U_NA,    KC_ALGR, U_NA,
+    KC_LBRC, KC_7,    KC_8,    KC_9,    KC_RBRC, KC_LCBR, KC_AMPR, KC_ASTR, KC_LPRN, KC_RCBR,
+    KC_SCLN, KC_4,    KC_5,    KC_6,    KC_EQL,  KC_COLN, KC_DLR,  KC_PERC, KC_CIRC, KC_PLUS,
+    KC_GRV,  KC_1,    KC_2,    KC_3,    KC_BSLS, KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_PIPE,
     U_NP,    U_NP,    KC_DOT,  KC_0,    KC_MINS, U_NA,    U_NA,    U_NA,    U_NP,    U_NP
   ),
   [NSSL] = LAYOUT_miryoku(

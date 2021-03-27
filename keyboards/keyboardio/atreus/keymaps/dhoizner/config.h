@@ -34,7 +34,7 @@
 // copied from keyboards/keyboardio/atreus/keymaps/manna-harbour_miryoku/config.h
 // generated from users/manna-harbour_miryoku/miryoku.org  -*- buffer-read-only: t -*-
 
-#pragma once
+//#pragma once
 
 #define XXX KC_NO
 
