@@ -5,6 +5,24 @@
 
 #include QMK_KEYBOARD_H
 
+enum combo_events {
+  AR_LEFT_PAREN,
+  RS_LEFT_BRACKET,
+  ST_LEFT_BRACE,
+  COMBO_LENGTH
+};
+uint16_t COMBO_LEN = COMBO_LENGTH;
+
+const uint16_t PROGMEM left_paren_combo[] = {KC_A, KC_R, COMBO_END};
+const uint16_t PROGMEM left_bracket_combo[] = {KC_R, KC_S, COMBO_END};
+const uint16_t PROGMEM left_brace_combo[] = {KC_S, KC_T, COMBO_END};
+
+combo_t key_combos[COMBO_COUNT] = {
+  [AR_LEFT_PAREN] = COMBO(left_paren_combo, LSFT(KC_9),
+  [RS_LEFT_BRACKET] = COMBO(KC_LBRACKET),
+  [ST_LEFT_BRACE] = COMBO(LSFT(KC_LBRACKET)),
+}
+
 enum layer_names {
     _BASE,
     _NAV,
