@@ -3,6 +3,7 @@
 
 // default but used in macros
 #define TAPPING_TERM 200
+#define COMBO_TERM 20
 
 // Prevent normal rollover on alphas from accidentally triggering mods.
 #define IGNORE_MOD_TAP_INTERRUPT
@@ -30,6 +31,7 @@
 #undef MOUSEKEY_TIME_TO_MAX
 #define MOUSEKEY_TIME_TO_MAX    64
 
+#define MIRYOKU_NAV_VI
 
 // copied from keyboards/keyboardio/atreus/keymaps/manna-harbour_miryoku/config.h
 // generated from users/manna-harbour_miryoku/miryoku.org  -*- buffer-read-only: t -*-

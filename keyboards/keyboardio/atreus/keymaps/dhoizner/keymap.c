@@ -35,6 +35,44 @@
   #define U_UND KC_UNDO
   #endif
 
+enum combo_events {
+  AR_LEFT_BRACE,
+  RS_LEFT_BRACKET,
+  ST_LEFT_PAREN,
+  IO_RIGHT_BRACE,
+  EI_RIGHT_BRACKET,
+  NE_RIGHT_PAREN,
+  WF_MINUS,
+  UY_UNDERSCORE,
+  FP_SEMICOLON,
+  LU_COLON,
+  COMBO_LENGTH
+};
+uint16_t COMBO_LEN = COMBO_LENGTH;
+
+const uint16_t PROGMEM left_brace_combo[] = {LCTL_T(KC_A), LALT_T(KC_R), COMBO_END};
+const uint16_t PROGMEM left_bracket_combo[] = {LALT_T(KC_R), LGUI_T(KC_S), COMBO_END};
+const uint16_t PROGMEM left_paren_combo[] = {LGUI_T(KC_S), LSFT_T(KC_T), COMBO_END};
+const uint16_t PROGMEM right_brace_combo[] = {LALT_T(KC_I), LCTL_T(KC_O), COMBO_END};
+const uint16_t PROGMEM right_bracket_combo[] = {LGUI_T(KC_E), LALT_T(KC_I), COMBO_END};
+const uint16_t PROGMEM right_paren_combo[] = {LSFT_T(KC_N), LGUI_T(KC_E), COMBO_END};
+const uint16_t PROGMEM minus_combo[] = {KC_W, KC_F, COMBO_END};
+const uint16_t PROGMEM semicolon_combo[] = {KC_F, KC_P, COMBO_END};
+const uint16_t PROGMEM underscore_combo[] = {KC_U, KC_Y, COMBO_END};
+const uint16_t PROGMEM colon_combo[] = {KC_L, KC_U, COMBO_END};
+
+combo_t key_combos[] = {
+  [ST_LEFT_PAREN] = COMBO(left_paren_combo, LSFT(KC_9)),
+  [RS_LEFT_BRACKET] = COMBO(left_bracket_combo, KC_LBRACKET),
+  [AR_LEFT_BRACE] = COMBO(left_brace_combo, LSFT(KC_LBRACKET)),
+  [NE_RIGHT_PAREN] = COMBO(right_paren_combo, LSFT(KC_0)),
+  [EI_RIGHT_BRACKET] = COMBO(right_bracket_combo, KC_RBRACKET),
+  [IO_RIGHT_BRACE] = COMBO(right_brace_combo, LSFT(KC_RBRACKET)),
+  [WF_MINUS] = COMBO(minus_combo, KC_MINS),
+  [FP_SEMICOLON] = COMBO(semicolon_combo, KC_SCLN),
+  [UY_UNDERSCORE] = COMBO(underscore_combo, KC_UNDS),
+  [LU_COLON] = COMBO(colon_combo, KC_COLN),
+};
 
   // copied from users/manna-harbour_miryoku/manna-harbour_miryoku.c
   // generated from users/manna-harbour_miryoku/miryoku.org  -*- buffer-read-only: t -*-

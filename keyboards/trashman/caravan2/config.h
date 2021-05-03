@@ -23,7 +23,6 @@
 #define BACKLIGHT_PIN undefined
 
 #define DEBOUNCE 5
-#define TAPPING_TERM 175
 
 #define USB_MAX_POWER_CONSUMPTION 100
 #define MULTIPLEX_PINS { D4, D6, D7, B4 }
