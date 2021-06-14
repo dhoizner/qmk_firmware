@@ -1,0 +1,54 @@
+// Left top row
+COMB(del,               KC_DEL,         KC_W, KC_F, KC_P)
+
+// Right top row
+SUBS(el_str_int,        "#{}"SS_TAP(X_LEFT),  KC_J, KC_L)
+COMB(backsp,            KC_BSPC,        KC_U, KC_Y)
+COMB(wbacksp,           C(KC_W),        KC_L, KC_U, KC_Y)
+
+// Left home row
+COMB(tab,               KC_TAB,         KC_AR, KC_GS)
+COMB(escape,            KC_ESC,         KC_GS, KC_ST)
+COMB(scln,              KC_SCLN,        KC_AR, KC_ST)
+COMB(slsh,              KC_SLSH,        KC_AR, KC_GS, KC_ST)
+
+// Right home row
+COMB(coln,              KC_COLN,        KC_SN, KC_GE)
+COMB(enter,             KC_ENT,         KC_GE, KC_AI)
+COMB(quot,              KC_QUOT,        KC_SN, KC_AI)
+
+// Right bottom row
+COMB(dollar,            KC_DLR,         KC_COMM, KC_DOT)
+// mixed
+COMB(capsword,          CAPSWORD,       KC_GS, KC_GE)
+COMB(xcase,             XCASE,          KC_ST, KC_SN)
+COMB(cancel,            CANCEL,         KC_GS, KC_ST, KC_SN, KC_GE)
+
+COMB(lprn,              KC_LPRN,        KC_NAV_BSPC, KC_P)
+COMB(lbrc,              KC_LBRC,        KC_NAV_BSPC, KC_ST)
+COMB(lcbr,              KC_LCBR,        KC_NAV_BSPC, KC_D)
+
+COMB(rprn,              KC_RPRN,        KC_NUM_SPC, KC_L)
+COMB(rbrc,              KC_RBRC,        KC_NUM_SPC, KC_SN)
+COMB(rcbr,              KC_RCBR,        KC_NUM_SPC, KC_H)
+
+COMB(mins,              KC_MINS,        KC_NAV_BSPC, KC_GS)
+COMB(unds,              KC_UNDS,        KC_NUM_SPC, KC_GE)
+
+COMB(save_vim,          SAVE_VIM,       KC_SN, KC_GE, KC_AI)
+
+// Thumbs
+COMB(num,               NUMWORD,        KC_NAV_BSPC, KC_NUM_SPC)
+COMB(num_cancel,            CANCEL,         KC_4, KC_5, KC_6)
+
+// Thumb numbers
+COMB(e_0,               KC_0,           KC_NUM_SPC, KC_CA)
+COMB(e_1,               KC_1,           KC_NUM_SPC, KC_X)
+COMB(e_2,               KC_2,           KC_NUM_SPC, KC_C)
+COMB(e_3,               KC_3,           KC_NUM_SPC, KC_D)
+COMB(e_4,               KC_4,           KC_NUM_SPC, KC_AR)
+COMB(e_5,               KC_5,           KC_NUM_SPC, KC_GS)
+COMB(e_6,               KC_6,           KC_NUM_SPC, KC_ST)
+COMB(e_7,               KC_7,           KC_NUM_SPC, KC_W)
+COMB(e_8,               KC_8,           KC_NUM_SPC, KC_F)
+COMB(e_9,               KC_9,           KC_NUM_SPC, KC_P)
