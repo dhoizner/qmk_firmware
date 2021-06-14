@@ -1,0 +1,7 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+#define PLOOPY_DRAGSCROLL_INVERT
+#define TAPPING_TOGGLE 1
+
+#endif // CONFIG_H
