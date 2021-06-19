@@ -18,7 +18,9 @@ COMB(enter,             KC_ENT,         KC_GE, KC_AI)
 COMB(quot,              KC_QUOT,        KC_SN, KC_AI)
 
 // Right bottom row
+COMB(circ,              KC_CIRC,        KC_H, KC_COMM)
 COMB(dollar,            KC_DLR,         KC_COMM, KC_DOT)
+
 // mixed
 COMB(capsword,          CAPSWORD,       KC_GS, KC_GE)
 COMB(xcase,             XCASE,          KC_ST, KC_SN)

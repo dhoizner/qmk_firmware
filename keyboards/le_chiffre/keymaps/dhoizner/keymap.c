@@ -296,8 +296,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) {
     add_keylog(keycode);
   }
-  return true;
 #endif
+  return true;
 }
 
 bool terminate_case_modes(uint16_t keycode, const keyrecord_t *record) {
