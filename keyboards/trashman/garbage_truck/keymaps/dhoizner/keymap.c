@@ -13,32 +13,43 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include QMK_KEYBOARD_H
-#include "keycodes.h"
-#include "casemodes.h"
-#include "layermodes.h"
+#include "dhoizner.h"
 #include "g/keymap_combo.h"
 
+#define LAYOUT_wrapper(...)            LAYOUT_all(__VA_ARGS__)
+#define LAYOUT_garbage_truck_base(                    \
+    K01, K02, K03, K04, K05, K06, K07, K08, K09, K0A, \
+    K11, K12, K13, K14, K15, K16, K17, K18, K19, K1A, \
+    K21, K22, K23, K24, K25, K26, K27, K28, K29, K2A  \
+  ) \
+  LAYOUT_wrapper( \
+    _______, K01, K02, K03, K04, K05, K06, K07, K08, K09, K0A, _______, _______,          ________________NUMBER_1___________________, \
+    _______, K11, K12, K13, K14, K15, K16, K17, K18, K19, K1A, _______,                   ________________NUMBER_2___________________, \
+    _______, K21, K22, K23, K24, K25, K26, K27, K28, K29, K2A, _______,          KC_UP,   ________________NUMBER_3___________________, \
+    _______, _______, LT_BSPC, LT_SPC, LT_ESC, _______,                 KC_LEFT, KC_DOWN, KC_RIGHT,  KC_0, KC_DOT  \
+  )
+
+#define LAYOUT_garbage_truck_base_wrapper(...) LAYOUT_garbage_truck_base(__VA_ARGS__)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_BASE] = LAYOUT_all(
-    KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_QUOT, KC_BSPC, KC_DEL,  KC_7,     KC_8,    KC_9,
-    _______, KC_CA,   KC_AR,   KC_GS,   KC_ST,   KC_G,    KC_M,    KC_SN,   KC_GE,   KC_AI,   KC_CO,   _______,          KC_1,     KC_2,    KC_6,
-    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, _______, KC_UP,   KC_4,     KC_5,    KC_6,
-    _______, _______, LT_BSPC,                   LT_SPC,           LT_ESC,  _______,                   KC_LEFT, KC_DOWN, KC_RIGHT, KC_0,    KC_DOT
+  [_BASE] = LAYOUT_garbage_truck_base_wrapper(
+    ______________COLEMAK_MOD_DH_L1____________, ______________COLEMAK_MOD_DH_R1____________,
+    ______________COLEMAK_MOD_DH_L2____________, ______________COLEMAK_MOD_DH_R2____________,
+    ______________COLEMAK_MOD_DH_L3____________, ______________COLEMAK_MOD_DH_R3____________
   ),
-  [_SYM] = LAYOUT_all(
-    _______, _______, KC_7,    KC_8,    KC_9,    _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______,
-    _______, KC_0,    KC_1,    KC_2,    KC_3,    KC_EQL,  KC_COLN, _______, _______, _______, KC_PLUS, _______,          _______,  _______, _______,
-    _______, KC_GRV,  KC_4,    KC_5,    KC_6,    KC_BSLS, KC_TILD, _______, _______, _______, KC_PIPE, _______, _______, _______,  _______, _______,
+  [_SYM] = LAYOUT_wrapper(
+    _______, _______, ________________NUMBER_1___________________, _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______,
+    _______, KC_0,    ________________NUMBER_2___________________,    KC_EQL,  KC_COLN, _______, _______, _______, KC_PLUS, _______,          _______,  _______, _______,
+    _______, KC_GRV,  ________________NUMBER_3___________________,    KC_BSLS, KC_TILD, _______, _______, _______, KC_PIPE, _______, _______, _______,  _______, _______,
     _______, _______, _______,                   _______,          _______, _______,                   _______, _______, _______,  _______, _______
   ),
-  [_NUM] = LAYOUT_all(
-    _______, _______, KC_7,    KC_8,    KC_9,    KC_DOT,  _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______,
-    _______, KC_0,    KC_1,    KC_2,    KC_3,    NUM_G,   _______, _______, _______, _______, _______, _______, _______,           _______, _______,
-    _______, KC_DOT,  KC_4,    KC_5,    KC_6,    _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______,
+  [_NUM] = LAYOUT_wrapper(
+    _______, _______, ________________NUMBER_1___________________,    KC_DOT,  _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______,
+    _______, KC_0,    ________________NUMBER_2___________________,    NUM_G,   _______, _______, _______, _______, _______, _______, _______,           _______, _______,
+    _______, KC_DOT,  ________________NUMBER_3___________________,    _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______,
     _______, _______, _______,                   _______,          CANCEL,  _______,                   _______, _______, _______,  _______, _______
   ),
-  //TODO fix layer taps and add in sym/num/nav layers
+  /* //TODO fix layer taps and add in sym/num/nav layers */
   [_NAV] = LAYOUT_all(
     RESET,   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______,
     _______, _______, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______,          _______,  _______, _______,
@@ -94,93 +105,4 @@ void encoder_update_user(uint8_t index, bool clockwise) {
       tap_code(KC_VOLD);
     }
   }
-}
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  if (!process_num_word(keycode, record)) {
-    switch (keycode) {
-    }
-    return false;
-  }
-
-  if (!process_case_modes(keycode, record)) {
-    return false;
-  }
-
-  switch (keycode) {
-    case SAVE_VIM:
-      if (record->event.pressed) {
-        tap_code(KC_ESC);
-        tap_code16(KC_SPC);
-        tap_code(KC_F);
-        tap_code(KC_S);
-      }
-      return false;
-    case NUMWORD:
-      process_num_word_activation(record);
-      return false;
-    case CAPSWORD:
-      if (record->event.pressed) {
-        toggle_caps_word();
-      }
-      return false;
-    case XCASE:
-      if (record->event.pressed){
-        toggle_xcase();
-      }
-      return false;
-    case KC_N:
-    case KC_E:
-      if (record->event.pressed) {
-        tap_code(keycode);
-      }
-      return false;
-    case NUM_G:
-      if (record->event.pressed) {
-        tap_code16(S(KC_G));
-      }
-      return false;
-    case CANCEL:
-      layer_off(_NUM);
-      disable_caps_word();
-      disable_xcase();
-      return false;
-  }
-#ifdef OLED_DRIVER_ENABLE
-  if (record->event.pressed) {
-    add_keylog(keycode);
-  }
-#endif
-  return true;
-}
-
-bool terminate_case_modes(uint16_t keycode, const keyrecord_t *record) {
-  switch (keycode) {
-    // Keycodes to ignore (don't disable caps word)
-    case KC_A ... KC_Z:
-    case KC_1 ... KC_0:
-    case KC_MINS:
-    case KC_UNDS:
-    case KC_BSPC:
-      // If mod chording, disable the mods
-      if (record->event.pressed && (get_mods() != 0)) {
-        return true;
-      }
-      break;
-    default:
-      if (record->event.pressed) {
-        return true;
-      }
-      break;
-  }
-  return false;
-}
-
-bool use_default_xcase_separator(uint16_t keycode, const keyrecord_t *record) {
-  switch(keycode) {
-    case KC_A ... KC_Z:
-    case KC_1 ... KC_0:
-      return true;
-  }
-  return false;
 }
