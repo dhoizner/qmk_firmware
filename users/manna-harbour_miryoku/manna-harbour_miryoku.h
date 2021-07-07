@@ -1,4 +1,8 @@
+// Copyright 2019 Manna Harbour
+// https://github.com/manna-harbour/miryoku
 // generated from users/manna-harbour_miryoku/miryoku.org  -*- buffer-read-only: t -*-
+
+// This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
@@ -8,7 +12,7 @@
 #define U_NA KC_NO // present but not available for use
 #define U_NU KC_NO // available but not used
 
-enum layers { BASE, MBO, MEDR, NAVR, MOUR, NSSL, NSL, FUNL };
+enum layers { BASE, MBO, MEDIA, NAV, MOUSE, SYM, NUM, FUN };
 
 #if defined MIRYOKU_CLIPBOARD_FUN
 #define U_RDO KC_AGIN
