@@ -23,7 +23,7 @@
 #define ______________COLEMAK_MOD_DH_L2____________       KC_CA,     KC_AR,    KC_GS,    KC_ST,    KC_G
 #define ______________COLEMAK_MOD_DH_L3____________       KC_Z,      KC_X,     KC_C,     KC_D,     KC_V
 
-#define ______________COLEMAK_MOD_DH_R1____________       KC_J,     KC_L,     KC_U,     KC_Y,     KC_SCLN
+#define ______________COLEMAK_MOD_DH_R1____________       KC_J,     KC_L,     KC_U,     KC_Y,     KC_QUOT
 #define ______________COLEMAK_MOD_DH_R2____________       KC_M,     KC_SN,    KC_GE,    KC_AI,    KC_CO
 #define ______________COLEMAK_MOD_DH_R3____________       KC_K,     KC_H,     KC_COMM,  KC_DOT,   KC_SLASH
 
